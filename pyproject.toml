@@ -39,8 +39,8 @@ classifiers = [
 
 
 [project.urls]
-Homepage = "https://github.com/stainless-sdks/airprompt-python"
-Repository = "https://github.com/stainless-sdks/airprompt-python"
+Homepage = "https://github.com/airpromptdev/python"
+Repository = "https://github.com/airpromptdev/python"
 
 
 
@@ -108,7 +108,7 @@ path = "README.md"
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
 # replace relative links with absolute links
 pattern = '\[(.+?)\]\(((?!https?://)\S+?)\)'
-replacement = '[\1](https://github.com/stainless-sdks/airprompt-python/tree/main/\g<2>)'
+replacement = '[\1](https://github.com/airpromptdev/python/tree/main/\g<2>)'
 
 [tool.black]
 line-length = 120
