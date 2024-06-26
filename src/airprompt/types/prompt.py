@@ -10,8 +10,8 @@ __all__ = ["Prompt"]
 class Prompt(BaseModel):
     model: str
 
-    prompt: str
-
     temperature: float
+
+    text: str
 
     version: int
