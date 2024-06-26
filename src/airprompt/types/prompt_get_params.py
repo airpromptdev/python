@@ -5,8 +5,8 @@ from __future__ import annotations
 from typing import Union
 from typing_extensions import Literal, TypedDict
 
-__all__ = ["PromptRetrieveParams"]
+__all__ = ["PromptGetParams"]
 
 
-class PromptRetrieveParams(TypedDict, total=False):
+class PromptGetParams(TypedDict, total=False):
     version: Union[int, Literal["latest"]]

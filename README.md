@@ -10,7 +10,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Documentation
 
-The REST API documentation can be found [on docs.airprompt.com](https://docs.airprompt.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found [on airprompt.dev](https://airprompt.dev). The full API of this library can be found in [api.md](api.md).
 
 ## Installation
 
@@ -27,30 +27,45 @@ pip install git+ssh://git@github.com/stainless-sdks/airprompt-python.git
 The full API of this library can be found in [api.md](api.md).
 
 ```python
+import os
 from airprompt import Airprompt
 
-client = Airprompt()
+client = Airprompt(
+    # This is the default and can be omitted
+    api_key=os.environ.get("AIRPROMPT_API_KEY"),
+)
 
-prompt = client.prompts.retrieve(
-    "string",
+prompt = client.prompts.get(
+    "PROMPT_ID",
+    version="latest",
 )
 print(prompt.model)
 ```
+
+While you can provide an `api_key` keyword argument,
+we recommend using [python-dotenv](https://pypi.org/project/python-dotenv/)
+to add `AIRPROMPT_API_KEY="My API Key"` to your `.env` file
+so that your API Key is not stored in source control.
 
 ## Async usage
 
 Simply import `AsyncAirprompt` instead of `Airprompt` and use `await` with each API call:
 
 ```python
+import os
 import asyncio
 from airprompt import AsyncAirprompt
 
-client = AsyncAirprompt()
+client = AsyncAirprompt(
+    # This is the default and can be omitted
+    api_key=os.environ.get("AIRPROMPT_API_KEY"),
+)
 
 
 async def main() -> None:
-    prompt = await client.prompts.retrieve(
-        "string",
+    prompt = await client.prompts.get(
+        "PROMPT_ID",
+        version="latest",
     )
     print(prompt.model)
 
@@ -85,8 +100,9 @@ from airprompt import Airprompt
 client = Airprompt()
 
 try:
-    client.prompts.retrieve(
-        "string",
+    client.prompts.get(
+        "PROMPT_ID",
+        version="latest",
     )
 except airprompt.APIConnectionError as e:
     print("The server could not be reached")
@@ -130,8 +146,9 @@ client = Airprompt(
 )
 
 # Or, configure per-request:
-client.with_options(max_retries=5).prompts.retrieve(
-    "string",
+client.with_options(max_retries=5).prompts.get(
+    "PROMPT_ID",
+    version="latest",
 )
 ```
 
@@ -155,8 +172,9 @@ client = Airprompt(
 )
 
 # Override per-request:
-client.with_options(timeout=5.0).prompts.retrieve(
-    "string",
+client.with_options(timeout=5.0).prompts.get(
+    "PROMPT_ID",
+    version="latest",
 )
 ```
 
@@ -196,12 +214,13 @@ The "raw" Response object can be accessed by prefixing `.with_raw_response.` to 
 from airprompt import Airprompt
 
 client = Airprompt()
-response = client.prompts.with_raw_response.retrieve(
-    "string",
+response = client.prompts.with_raw_response.get(
+    "PROMPT_ID",
+    version="latest",
 )
 print(response.headers.get('X-My-Header'))
 
-prompt = response.parse()  # get the object that `prompts.retrieve()` would have returned
+prompt = response.parse()  # get the object that `prompts.get()` would have returned
 print(prompt.model)
 ```
 
@@ -216,8 +235,9 @@ The above interface eagerly reads the full response body when you make the reque
 To stream the response body, use `.with_streaming_response` instead, which requires a context manager and only reads the response body once you call `.read()`, `.text()`, `.json()`, `.iter_bytes()`, `.iter_text()`, `.iter_lines()` or `.parse()`. In the async client, these are async methods.
 
 ```python
-with client.prompts.with_streaming_response.retrieve(
-    "string",
+with client.prompts.with_streaming_response.get(
+    "PROMPT_ID",
+    version="latest",
 ) as response:
     print(response.headers.get("X-My-Header"))
 
