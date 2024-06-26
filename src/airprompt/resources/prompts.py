@@ -50,10 +50,13 @@ class PromptsResource(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> Prompt:
-        """
-        Returns a single prompt
+        """Returns a single prompt
 
         Args:
+          version: Version of prompt to return.
+
+        'latest' or a specific version number.
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -98,10 +101,13 @@ class AsyncPromptsResource(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> Prompt:
-        """
-        Returns a single prompt
+        """Returns a single prompt
 
         Args:
+          version: Version of prompt to return.
+
+        'latest' or a specific version number.
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request

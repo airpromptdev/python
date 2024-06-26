@@ -10,3 +10,4 @@ __all__ = ["PromptGetParams"]
 
 class PromptGetParams(TypedDict, total=False):
     version: Union[int, Literal["latest"]]
+    """Version of prompt to return. 'latest' or a specific version number."""

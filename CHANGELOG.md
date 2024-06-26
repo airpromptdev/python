@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2024-06-26)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/airpromptdev/python/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#8](https://github.com/airpromptdev/python/issues/8)) ([f39ba57](https://github.com/airpromptdev/python/commit/f39ba57593f2228a6fd5a4857e56c3e597011888))
+
 ## 0.1.0-alpha.2 (2024-06-26)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/airpromptdev/python/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
