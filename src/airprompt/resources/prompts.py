@@ -65,7 +65,7 @@ class PromptsResource(SyncAPIResource):
         if not prompt_id:
             raise ValueError(f"Expected a non-empty value for `prompt_id` but received {prompt_id!r}")
         return self._get(
-            f"/prompts/{prompt_id}",
+            f"/v1/prompts/{prompt_id}",
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -113,7 +113,7 @@ class AsyncPromptsResource(AsyncAPIResource):
         if not prompt_id:
             raise ValueError(f"Expected a non-empty value for `prompt_id` but received {prompt_id!r}")
         return await self._get(
-            f"/prompts/{prompt_id}",
+            f"/v1/prompts/{prompt_id}",
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,

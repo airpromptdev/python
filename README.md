@@ -32,7 +32,7 @@ from airprompt import Airprompt
 client = Airprompt()
 
 prompt = client.prompts.retrieve(
-    "REPLACE_ME",
+    "string",
 )
 print(prompt.model)
 ```
@@ -50,7 +50,7 @@ client = AsyncAirprompt()
 
 async def main() -> None:
     prompt = await client.prompts.retrieve(
-        "REPLACE_ME",
+        "string",
     )
     print(prompt.model)
 
@@ -86,7 +86,7 @@ client = Airprompt()
 
 try:
     client.prompts.retrieve(
-        "REPLACE_ME",
+        "string",
     )
 except airprompt.APIConnectionError as e:
     print("The server could not be reached")
@@ -131,7 +131,7 @@ client = Airprompt(
 
 # Or, configure per-request:
 client.with_options(max_retries=5).prompts.retrieve(
-    "REPLACE_ME",
+    "string",
 )
 ```
 
@@ -156,7 +156,7 @@ client = Airprompt(
 
 # Override per-request:
 client.with_options(timeout=5.0).prompts.retrieve(
-    "REPLACE_ME",
+    "string",
 )
 ```
 
@@ -197,7 +197,7 @@ from airprompt import Airprompt
 
 client = Airprompt()
 response = client.prompts.with_raw_response.retrieve(
-    "REPLACE_ME",
+    "string",
 )
 print(response.headers.get('X-My-Header'))
 
@@ -217,7 +217,7 @@ To stream the response body, use `.with_streaming_response` instead, which requi
 
 ```python
 with client.prompts.with_streaming_response.retrieve(
-    "REPLACE_ME",
+    "string",
 ) as response:
     print(response.headers.get("X-My-Header"))
 
