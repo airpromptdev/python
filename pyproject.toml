@@ -3,9 +3,9 @@ name = "airprompt"
 version = "0.0.1-alpha.0"
 description = "The official Python library for the airprompt API"
 dynamic = ["readme"]
-license = "Apache-2.0"
+license = "MIT"
 authors = [
-{ name = "Airprompt", email = "dev-feedback@airprompt.com" },
+{ name = "Airprompt", email = "hwang@airprompt.dev" },
 ]
 dependencies = [
     "httpx>=0.23.0, <1",
@@ -33,7 +33,7 @@ classifiers = [
   "Operating System :: POSIX :: Linux",
   "Operating System :: Microsoft :: Windows",
   "Topic :: Software Development :: Libraries :: Python Modules",
-  "License :: OSI Approved :: Apache Software License"
+  "License :: OSI Approved :: MIT License"
 ]
 
 

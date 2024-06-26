@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+
 
 from .._models import BaseModel
 
@@ -8,10 +8,10 @@ __all__ = ["Prompt"]
 
 
 class Prompt(BaseModel):
-    model: Optional[str] = None
+    model: str
 
-    prompt: Optional[str] = None
+    prompt: str
 
-    temperature: Optional[float] = None
+    temperature: float
 
-    version: Optional[int] = None
+    version: int

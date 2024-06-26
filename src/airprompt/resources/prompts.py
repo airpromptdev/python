@@ -7,7 +7,7 @@ from typing_extensions import Literal
 
 import httpx
 
-from ..types import prompt_retrieve_params
+from ..types import prompt_get_params
 from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
 from .._utils import (
     maybe_transform,
@@ -38,7 +38,7 @@ class PromptsResource(SyncAPIResource):
     def with_streaming_response(self) -> PromptsResourceWithStreamingResponse:
         return PromptsResourceWithStreamingResponse(self)
 
-    def retrieve(
+    def get(
         self,
         prompt_id: str,
         *,
@@ -71,7 +71,7 @@ class PromptsResource(SyncAPIResource):
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
-                query=maybe_transform({"version": version}, prompt_retrieve_params.PromptRetrieveParams),
+                query=maybe_transform({"version": version}, prompt_get_params.PromptGetParams),
             ),
             cast_to=Prompt,
         )
@@ -86,7 +86,7 @@ class AsyncPromptsResource(AsyncAPIResource):
     def with_streaming_response(self) -> AsyncPromptsResourceWithStreamingResponse:
         return AsyncPromptsResourceWithStreamingResponse(self)
 
-    async def retrieve(
+    async def get(
         self,
         prompt_id: str,
         *,
@@ -119,7 +119,7 @@ class AsyncPromptsResource(AsyncAPIResource):
                 extra_query=extra_query,
                 extra_body=extra_body,
                 timeout=timeout,
-                query=await async_maybe_transform({"version": version}, prompt_retrieve_params.PromptRetrieveParams),
+                query=await async_maybe_transform({"version": version}, prompt_get_params.PromptGetParams),
             ),
             cast_to=Prompt,
         )
@@ -129,8 +129,8 @@ class PromptsResourceWithRawResponse:
     def __init__(self, prompts: PromptsResource) -> None:
         self._prompts = prompts
 
-        self.retrieve = to_raw_response_wrapper(
-            prompts.retrieve,
+        self.get = to_raw_response_wrapper(
+            prompts.get,
         )
 
 
@@ -138,8 +138,8 @@ class AsyncPromptsResourceWithRawResponse:
     def __init__(self, prompts: AsyncPromptsResource) -> None:
         self._prompts = prompts
 
-        self.retrieve = async_to_raw_response_wrapper(
-            prompts.retrieve,
+        self.get = async_to_raw_response_wrapper(
+            prompts.get,
         )
 
 
@@ -147,8 +147,8 @@ class PromptsResourceWithStreamingResponse:
     def __init__(self, prompts: PromptsResource) -> None:
         self._prompts = prompts
 
-        self.retrieve = to_streamed_response_wrapper(
-            prompts.retrieve,
+        self.get = to_streamed_response_wrapper(
+            prompts.get,
         )
 
 
@@ -156,6 +156,6 @@ class AsyncPromptsResourceWithStreamingResponse:
     def __init__(self, prompts: AsyncPromptsResource) -> None:
         self._prompts = prompts
 
-        self.retrieve = async_to_streamed_response_wrapper(
-            prompts.retrieve,
+        self.get = async_to_streamed_response_wrapper(
+            prompts.get,
         )

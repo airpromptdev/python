@@ -20,7 +20,7 @@ or products provided by Airprompt please follow the respective company's securit
 
 ### Airprompt Terms and Policies
 
-Please contact dev-feedback@airprompt.com for any questions or concerns regarding security of our services.
+Please contact hwang@airprompt.dev for any questions or concerns regarding security of our services.
 
 ---
 
