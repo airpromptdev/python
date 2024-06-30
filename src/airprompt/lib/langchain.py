@@ -36,11 +36,16 @@ class AirpromptTemplate(StringPromptTemplate):
         super().__init_subclass__(**kwargs)
 
     def __init__(self, **kwargs):
+        json_input_variables = kwargs.get("json_input_variables")
+
+        input_variables = kwargs.pop("input_variables", None)
+        if json_input_variables:
+            input_variables = ["vars"]
+
         super().__init__(
-            input_variables=kwargs.get("input_variables", ["vars"]),
+            input_variables=input_variables,
             **kwargs,
         )
-        self.json_input_variables = self.json_input_variables if self.json_input_variables is not None else True
 
     def _make_input_variables(self, **kwargs):
         return json.loads(kwargs["vars"]) if self.json_input_variables else kwargs
