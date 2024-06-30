@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2024-06-30)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/airpromptdev/python/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Features
+
+* [AIR-33] Add LangChain support ([#11](https://github.com/airpromptdev/python/issues/11)) ([79ee15c](https://github.com/airpromptdev/python/commit/79ee15c210b660f64749c0e94da635f456997086))
+
 ## 0.1.0-alpha.3 (2024-06-26)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/airpromptdev/python/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
