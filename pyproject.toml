@@ -1,6 +1,6 @@
 [project]
 name = "airprompt"
-version = "0.1.0-alpha.3"
+version = "0.1.0-alpha.4"
 description = "The official Python library for the airprompt API"
 dynamic = ["readme"]
 license = "MIT"
@@ -98,6 +98,21 @@ include = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/airprompt"]
+
+[tool.hatch.build.targets.sdist]
+# Basically everything except hidden files/directories (such as .github, .devcontainers, .python-version, etc)
+include = [
+  "/*.toml",
+  "/*.json",
+  "/*.lock",
+  "/*.md",
+  "/mypy.ini",
+  "/noxfile.py",
+  "bin/*",
+  "examples/*",
+  "src/*",
+  "tests/*",
+]
 
 [tool.hatch.metadata.hooks.fancy-pypi-readme]
 content-type = "text/markdown"
