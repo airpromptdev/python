@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2024-06-30)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/airpromptdev/python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* [AIR-33] Change default behavior ([#14](https://github.com/airpromptdev/python/issues/14)) ([ece6ab7](https://github.com/airpromptdev/python/commit/ece6ab7fc2b71e69103b99259c95ba2d50eb4353))
+
 ## 0.1.0-alpha.4 (2024-06-30)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/airpromptdev/python/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
